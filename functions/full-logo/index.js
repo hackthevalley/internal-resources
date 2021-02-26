@@ -1,6 +1,7 @@
 const fs = require('fs');
 const sharp = require('sharp');
 const colors = require('../../utils/colors');
+const hexToRgb = require('../../utils/hex-to-rgb');
 const replace = require('../../utils/replace');
 
 exports.handler = async event => {
@@ -14,22 +15,30 @@ exports.handler = async event => {
         asset = replace(asset, `currentColor`, colors[color] || color);
     }
 
-    if (background) {
-        asset = replace(asset, `<svg`, `<svg style="background-color: ${colors[background] || background}"`);
-    }
-
     switch(format) {
         case `webp`:
-            asset = await sharp(asset).toFormat(`webp`).toBuffer();
+            asset = sharp(asset).toFormat(`webp`);
+            if (background) {
+                asset = asset.flatten({
+                    background: hexToRgb(colors[background] || background)
+                });
+            }
+            asset = await asset.toFormat(`webp`).toBuffer();
             mimeType = `image/webp`;
             break;
         case `png`:
-            asset = await sharp(asset).toFormat(`png`).toBuffer();
+            asset = sharp(asset);
+            if (background) {
+                asset = asset.flatten({
+                    background: hexToRgb(colors[background] || background)
+                });
+            }
+            asset = await asset.toFormat(`png`).toBuffer();
             mimeType = `image/png`;
             break;
         default:
             if (background) {
-
+                asset = replace(asset, `<svg`, `<svg style="background-color: ${colors[background] || background}"`);
             }
             break;
     }
