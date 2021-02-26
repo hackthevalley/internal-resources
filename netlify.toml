@@ -2,3 +2,8 @@
   command = ""
   functions = "functions"
   publish = "assets"
+
+[[redirects]]
+  from = "/assets"
+  to = "/.netlify/functions"
+  status = 301
