@@ -20,11 +20,11 @@ exports.handler = async event => {
 
     switch(format) {
         case `webp`:
-            asset = await sharp(asset).asset.toFormat(`webp`).toBuffer();
+            asset = await sharp(asset).toFormat(`webp`).toBuffer();
             mimeType = `image/webp`;
             break;
         case `png`:
-            asset = await sharp(asset).asset.toFormat(`png`).toBuffer();
+            asset = await sharp(asset).toFormat(`png`).toBuffer();
             mimeType = `image/png`;
             break;
         default:
