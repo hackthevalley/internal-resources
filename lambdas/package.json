@@ -1,0 +1,19 @@
+{
+  "name": "@htv/cdn",
+  "version": "1.0.0",
+  "description": "For content delivery with speedly performance with DNS level caching",
+  "main": "index.js",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "netlify-cli": "^3.10.0"
+  },
+  "dependencies": {
+    "netlify-lambda": "^2.0.3",
+    "sharp": "^0.27.2"
+  }
+}
