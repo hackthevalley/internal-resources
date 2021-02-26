@@ -2,7 +2,7 @@
   <div align="center">
     <img src="https://cdn.hackthevalley.io/assets/full-logo?color=lime" width="160"/>
   </div>
-  Lorem Ipsum
+  HTV Internal Resources
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d840078f-f256-448b-9de5-8724283e6d92/deploy-status)](https://app.netlify.com/sites/htv-cdn/deploys)
