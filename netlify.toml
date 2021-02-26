@@ -4,6 +4,6 @@
   publish = "assets"
 
 [[redirects]]
-  from = "/assets"
-  to = "/.netlify/functions"
-  status = 301
+  from = "/assets/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
