@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "netlify-cli": "^3.10.0"
+    "netlify-cli": "^3.39.1"
   },
   "dependencies": {
-    "netlify-lambda": "^2.0.3",
+    "netlify-lambda": "^2.0.10",
     "sharp": "^0.27.2"
   }
 }
